@@ -1,3 +1,5 @@
+import os
+
 import plotly.graph_objects as go
 import dash
 import dash_core_components as dcc
@@ -99,5 +101,6 @@ def update_ticker(n_clicks, ticker):
 
         return dcc.Graph(figure=fig)
 
+
 if __name__ == '__main__':
-    app.run_server(host='0.0.0.0')
+    app.run_server(host='0.0.0.0', port=os.environ.get('PORT'))
